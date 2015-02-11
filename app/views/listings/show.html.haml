@@ -1,9 +1,16 @@
-%h1= @listing.title
-%p.description= @listing.description
-%p.user
-	Submitted by
-	= @listing.user.email
-
-= link_to "Back", root_path
-= link_to "Edit", edit_listing_path
-= link_to "Delete", listing_path, method: :delete, data: { confirm: "Are you sure?" }
+#pin_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-body
+				%h1= @listing.title
+				%p.description= @listing.description
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+							Submitted by
+							= @listing.user.email
+					.col-md-6
+						.btn-group.pull-right
+							= link_to "Edit", edit_listing_path, class: "btn btn-default"
+							= link_to "Delete", listing_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
