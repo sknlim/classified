@@ -38,6 +38,11 @@ class ListingsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def upvote
+		@listing.upvote_by current_user
+		redirect_to :back
+	end
+
 	private
 
 	def listing_params
