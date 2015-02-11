@@ -2,7 +2,9 @@
 	.row
 		.panel.panel-default
 			.panel-heading
-				%h1 Edit Your Listing
+				%h1 Edit Your Pin
 			.panel-body
-
+				.current_image
+					%strong.center Current Image
+					= image_tag @listing.image.url(:medium)
 				= render 'form'
