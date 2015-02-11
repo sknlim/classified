@@ -1,7 +1,7 @@
-#pin_show.row
+#listing_show.row
 	.col-md-8.col-md-offset-2
 		.panel.panel-default
-			.panel-heading.pin_image
+			.panel-heading.listing_image
 				= image_tag @listing.image.url
 			.panel-body
 				%h1= @listing.title
@@ -11,7 +11,9 @@
 					.col-md-6
 						%p.user
 							Submitted by
+
 					.col-md-6
 						.btn-group.pull-right
-							= link_to "Edit", edit_listing_path, class: "btn btn-default"
-							= link_to "Delete", listing_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+							- if user_signed_in?
+								= link_to "Edit", edit_listing_path, class: "btn btn-default"
+								= link_to "Delete", listing_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

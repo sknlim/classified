@@ -1,6 +1,7 @@
-#listings.transitions-enabled
+#listing.transitions-enabled
 	- @listing.each do |listing|
 		.box.panel.panel-default
 			= link_to (image_tag listing.image.url), listing
-		.box.panel.panel-default
 			%h2= link_to listing.title, listing
+			%p.user
+				Submitted by
