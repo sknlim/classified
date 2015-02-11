@@ -1,0 +1,5 @@
+= link_to "New Listing", new_listing_path
+#listings.transitions-enabled
+	- @listing.each do |listing|
+		.box.panel.panel-default
+			%h2= link_to listing.title, listing

@@ -1,0 +1,6 @@
+%h1= @listing.title
+%p.description= @listing.description
+
+= link_to "Back", root_path
+= link_to "Edit", edit_listing_path
+= link_to "Delete", listing_path, method: :delete, data: { confirm: "Are you sure?" }
